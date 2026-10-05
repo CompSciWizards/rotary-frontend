@@ -1,107 +1,93 @@
 ---
-layout: post 
-title: Portfolio Home 
+layout: post
+title: Poway-Scripps Rotary Club
 hide: true
 show_reading_time: false
 ---
 
-Hi! My name is [Your Full Name]
-
-### Development Environment
-
-
 <!-- markdownlint-disable MD033 MD046 -->
 
-{% include sass-nav.html %}
+<div class="ocs__container">
+  <span class="ocs__badge">Service Above Self</span>
+  <h1 class="ocs__section-title">Welcome to Poway-Scripps Rotary</h1>
+  <p class="ocs__description">
+    Neighbors, friends, and community leaders coming together for local service and fellowship in Poway and Scripps Ranch.
+  </p>
 
-Hi! My name is [Your Full Name]
+  <div class="ocs__card">
+    <h3>We Meet In Person</h3>
+    <p class="ocs__description">
+      Wednesdays at 11:30 AM at Kaminski's BBQ, 12735 Poway Road, Poway, CA 92064.
+      Dark last Wednesday of the month for socials and service projects.
+      Guests are welcome. Lunch is $30.
+    </p>
+    <div class="ocs__links ocs__links--wide">
+      <a class="ocs__btn pill accent fill" href="https://powayscrippsrotary.org/form/membership-inquiry">Join Us</a>
+      <a class="ocs__btn pill" href="https://powayscrippsrotary.org/donate">Donate</a>
+      <a class="ocs__btn pill" href="https://powayscrippsrotary.org/">Club Site</a>
+    </div>
+  </div>
 
-## Learning Buttons
+  <h2 class="ocs__section-title">Upcoming Events</h2>
+  <p class="ocs__description">Weekly programs and service projects. Content reference: powayscrippsrotary.org.</p>
 
-> SASS Mixins examples and code, explore these topics by clicking standard OCS SASS buttons.
+  <div class="ocs__card">
+    <div class="ocs__table-wrap">
+      <table class="ocs__table">
+        <thead>
+          <tr><th>Date</th><th>Program</th><th>Speaker</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sept 12, Sat</td><td>Poway Rotary Parade, 9-11 AM on Poway Road</td><td>Community Event</td></tr>
+          <tr><td>Sept 16</td><td>Robin's Nest Rescue</td><td>Jenny Ng</td></tr>
+          <tr><td>Sept 23</td><td>Special Needs Support</td><td>Tony Rubino</td></tr>
+          <tr><td>Nov 26</td><td>San Diego Blood Bank Drive</td><td>Service Project</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ocs__links">
+      <a class="ocs__btn small alert-green fill" href="https://powayscrippsrotary.org/">Full Calendar</a>
+      <a class="ocs__btn small alert-yellow fill" href="https://powayscrippsrotary.org/singleemail/contactus">Sign Up for Bulletin</a>
+    </div>
+  </div>
 
-<div class="ocs__links">
-    <a class="ocs__btn" href="{{site.baseurl}}/github/pages/about_sass_buttons/">
-        Buttons Lesson
-    </a>
-    <a class="ocs__btn" href="https://github.com/Open-Coding-Society/pages/blob/main/_sass/open-coding/mixins/_buttons.scss">
-        Button Mixins
-    </a>
-    <a class="ocs__btn" href="https://github.com/Open-Coding-Society/pages/blob/main/_sass/open-coding/mixins/_container.scss">
-        Container Mixins
-    </a>
+  <h2 class="ocs__section-title">Homepage Stories</h2>
+  <p class="ocs__description">A brief look at recent club highlights.</p>
+
+  <div class="ocs__grid ocs__grid--card">
+    <div class="ocs__grid-cell">
+      <span class="ocs__status-pill ocs__status-pill--good">Parade</span>
+      <h3>RB Band Wins Top Band Award</h3>
+      <p>Rancho Bernardo Band earned Top Band honors at the Poway Parade. Awesome job!</p>
+      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/rb-band-wins-top-band-award">Read Story</a>
+    </div>
+    <div class="ocs__grid-cell">
+      <span class="ocs__status-pill ocs__status-pill--neutral">Community</span>
+      <h3>Mayor's Award to General Atomics</h3>
+      <p>Thanks to General Atomics for sponsoring the parade and winning the Mayor's Award.</p>
+      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/mayor-s-award-to-general-atomics">Read Story</a>
+    </div>
+    <div class="ocs__grid-cell">
+      <span class="ocs__status-pill ocs__status-pill--warn">Service</span>
+      <h3>Chollas View Food Pantry Build</h3>
+      <p>Members built a food pantry for elementary families and earned an appreciation award.</p>
+      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/we-do-amazing-things">Read Story</a>
+    </div>
+    <div class="ocs__grid-cell">
+      <span class="ocs__status-pill ocs__status-pill--good">Youth</span>
+      <h3>$3,000 in Scholarships Awarded</h3>
+      <p>Celebrating local students showing leadership through Service Above Self.</p>
+      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/scholarship-winners">Read Story</a>
+    </div>
+  </div>
+
+  <div class="ocs__card">
+    <p class="ocs__callout">New here? Join us for lunch on Wednesday or explore our projects and stories on the official club site.</p>
+    <div class="ocs__links">
+      <a class="ocs__btn accent fill" href="https://powayscrippsrotary.org/SitePage/our-projects-what-we-do">Our Projects</a>
+      <a class="ocs__btn" href="https://powayscrippsrotary.org/stories">All Stories</a>
+    </div>
+  </div>
 </div>
 
-## Development Environment
-
-> Coding starts with tools, explore these tools clicking SASS buttons with SVG.
-
-<div class="ocs__links ocs__links--wide">
-    <a class="ocs__btn ocs__btn--icon alert-green" href="https://opencodingsociety.com">
-        <span class="ocs__btn-icon" aria-hidden="true">
-            <img src="{{ '/favicon.ico' | relative_url }}" alt="">
-        </span>
-        <span>OCS</span>
-    </a>
-    <a class="ocs__btn ocs__btn--icon alert-yellow" href="https://github.com/Open-Coding-Society/portfolio">
-        <span class="ocs__btn-icon" aria-hidden="true">
-            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-            </svg>
-        </span>
-        <span>GitHub</span>
-    </a>
-    <a class="ocs__btn ocs__btn--icon alert-red" href="https://vscode.dev/">
-        <span class="ocs__btn-icon" aria-hidden="true">
-            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.34 0L5.66 5.39l-2.4-1.8L1.19 4.82v6.36l2.07 1.23 2.4-1.8L11.34 16 15 14.23V1.77L11.34 0zm.59 11.57l-3.86-3.54 3.86-3.54v7.08z"/>
-            </svg>
-        </span>
-        <span>VSCode.dev</span>
-    </a>
-</div>
-
-<br>
-
-## Code Runner Lessons
-
-> Foundations in Tech are essential, click my iridescent buttons to see some of my lesson creations.
-
-<div class="ocs__links">
-    <a class="ocs__btn iridescent" href="{{site.baseurl}}/code/javascript">
-        JS Basics
-    </a>
-    <a class="ocs__btn alert-green iridescent" href="{{site.baseurl}}/game/essentials/variables">
-        JS Variables
-    </a>
-    <a class="ocs__btn alert-yellow iridescent" href="{{site.baseurl}}/navigation/sass">
-       SASS
-    </a>
-    <a class="ocs__btn alert-yellow iridescent" href="{{site.baseurl}}/gamerunner">
-        Gamerunner
-    </a>
-    <a class="ocs__btn alert-red iridescent" href="{{site.baseurl}}/network/stack">
-        Networking
-    </a>
-</div>
-
-<br>
-
-### Class Progress
-
-> Here is my game progress through coding, click multicolor and size buttons to see these in the browser
-
-<div class="ocs__links">
-    <a href="{{site.baseurl}}/snake" class="ocs__btn pill alert-green fill">
-        Snake
-    </a>
-    <a href="{{site.baseurl}}/gamify/parallax" class="ocs__btn small alert-yellow fill">
-        Fish
-    </a>
-    <a href="{{site.baseurl}}/gamify" class="ocs__btn alert-red fill">
-        Gamify
-    </a>
-</div>
-
-<br>
 <!-- markdownlint-enable MD033 MD046 -->
