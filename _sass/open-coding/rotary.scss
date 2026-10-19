@@ -1,0 +1,315 @@
+// Rotary club layout: navy topbar with a light content theme.
+
+$rotary-navy: #0a3165;
+$rotary-navy-dark: #0c3c7c;
+$rotary-gold: #f7a800;
+$rotary-bg: #ffffff;
+$rotary-surface: #f5f8fc;
+$rotary-surface-alt: #e9f0f8;
+$rotary-text: #16223a;
+$rotary-muted: #56657c;
+$rotary-border: #d6deea;
+$rotary-link: #0c3c7c;
+
+.rotary-topbar {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  font-family: "Inter", "Roboto", "Open Sans", sans-serif;
+}
+
+.rotary-topbar__inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.rotary-topbar__top {
+  background-color: $rotary-navy;
+}
+
+.rotary-topbar__top .rotary-topbar__inner {
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.rotary-topbar__brand {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.rotary-topbar__brand img {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+:root.rotary-html .rotary-topbar__member-login {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 4px;
+  color: #ffffff !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+:root.rotary-html .rotary-topbar__member-login:hover,
+:root.rotary-html .rotary-topbar__member-login:focus-visible {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.rotary-topbar__bottom {
+  background-color: $rotary-navy-dark;
+}
+
+.rotary-topbar__bottom .rotary-topbar__inner {
+  min-height: 48px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.rotary-topbar__bottom .rotary-topbar__inner::-webkit-scrollbar {
+  display: none;
+}
+
+:root.rotary-html .rotary-topbar__nav-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 18px;
+  border-bottom: 3px solid transparent;
+  color: #ffffff !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+:root.rotary-html .rotary-topbar__nav-link:first-child {
+  padding-left: 0;
+}
+
+:root.rotary-html .rotary-topbar__nav-link:hover,
+:root.rotary-html .rotary-topbar__nav-link:focus-visible {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+:root.rotary-html .rotary-topbar__nav-link.is-active {
+  border-bottom-color: $rotary-gold;
+}
+
+@media (max-width: 600px) {
+  .rotary-topbar__inner {
+    padding: 0 16px;
+  }
+
+  .rotary-topbar__top .rotary-topbar__inner {
+    min-height: 56px;
+  }
+
+  .rotary-topbar__brand img {
+    height: 32px;
+  }
+
+  :root.rotary-html .rotary-topbar__nav-link {
+    padding: 0 14px;
+  }
+}
+
+:root.rotary-html,
+:root.rotary-html body.rotary-layout {
+  background-color: $rotary-bg !important;
+  color: $rotary-text !important;
+}
+
+body.rotary-layout {
+  --pref-bg-color: #{$rotary-bg};
+  --pref-text-color: #{$rotary-text};
+  --pref-accent-color: #{$rotary-link};
+  --pref-success-color: #1f8a4c;
+  --pref-font-size: 15px;
+  --background: #{$rotary-bg};
+  --bg-0: #{$rotary-bg};
+  --bg-1: #{$rotary-surface};
+  --bg-2: #{$rotary-surface-alt};
+  --bg-3: #{$rotary-surface-alt};
+  --text: #{$rotary-text};
+  --text-strong: #{$rotary-navy};
+  --text-muted: #{$rotary-muted};
+  --white1: #{$rotary-text};
+  --panel: #{$rotary-surface};
+  --panel-mid: #{$rotary-surface-alt};
+  --ui-bg: #{$rotary-surface};
+  --ui-border: #{$rotary-border};
+  --navbar-surface: #{$rotary-surface};
+  --navbar-border: #{$rotary-border};
+  --navbar-muted: #{$rotary-muted};
+  background-color: $rotary-bg !important;
+  color: $rotary-text !important;
+}
+
+:root.rotary-html .rotary-layout {
+
+  .page-content,
+  .wrapper,
+  main,
+  .opencs_root {
+    background-color: $rotary-bg !important;
+    color: $rotary-text !important;
+  }
+}
+
+:root.rotary-html .rotary-layout .opencs_root {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $rotary-navy !important;
+  }
+
+  p,
+  li,
+  ul,
+  ol,
+  dl,
+  dt,
+  dd,
+  div,
+  span,
+  td,
+  th,
+  label,
+  small {
+    color: $rotary-text !important;
+  }
+
+  .ocs__container {
+    color: $rotary-text;
+  }
+
+  .ocs__description,
+  .ocs__text,
+  .ocs__team-label,
+  .ocs__stat-label,
+  .ocs__keypoint,
+  .ocs__checklist li,
+  .ocs__card-treatment,
+  .ocs__card-description,
+  .ocs__card-team {
+    color: $rotary-muted !important;
+  }
+
+  .ocs__callout {
+    background-color: $rotary-surface-alt !important;
+    border-color: $rotary-border !important;
+    color: $rotary-muted !important;
+  }
+
+  .ocs__card,
+  .ocs__grid-cell,
+  .ocs__stat,
+  .ocs__visual,
+  .ocs__diagram {
+    background-color: $rotary-surface !important;
+    border-color: $rotary-border !important;
+    color: $rotary-text !important;
+  }
+
+  .ocs__badge,
+  .ocs__status {
+    background-color: rgba(12, 60, 124, 0.1) !important;
+    border-color: $rotary-link !important;
+    color: $rotary-link !important;
+  }
+
+  .ocs__status-pill {
+    border-color: $rotary-border !important;
+    color: $rotary-text !important;
+  }
+
+  .ocs__status-pill--good,
+  .ocs__status-pill--warn,
+  .ocs__status-pill--bad {
+    background-color: rgba(12, 60, 124, 0.1) !important;
+    border-color: $rotary-link !important;
+    color: $rotary-link !important;
+  }
+
+  .ocs__status-pill--neutral {
+    background-color: $rotary-surface-alt !important;
+    color: $rotary-muted !important;
+  }
+
+  .ocs__table {
+    color: $rotary-text !important;
+
+    th,
+    td {
+      border-color: $rotary-border !important;
+      color: $rotary-text !important;
+    }
+
+    th {
+      background-color: $rotary-surface-alt !important;
+    }
+
+    tbody tr {
+      background-color: $rotary-bg !important;
+
+      &:nth-child(even) {
+        background-color: $rotary-surface !important;
+      }
+
+      &:hover,
+      &:nth-child(even):hover {
+        background-color: $rotary-surface-alt !important;
+      }
+    }
+  }
+
+  .ocs__image-frame {
+    background-color: $rotary-surface !important;
+    border-color: $rotary-border !important;
+  }
+
+  .ocs__checklist li,
+  .ocs__checklist-box {
+    border-color: $rotary-border !important;
+  }
+
+  .ocs__checklist li.done .ocs__checklist-box {
+    background-color: rgba(12, 60, 124, 0.1) !important;
+    border-color: $rotary-link !important;
+  }
+
+  .ocs__check {
+    color: $rotary-link !important;
+  }
+
+  blockquote {
+    border-left-color: $rotary-border !important;
+    color: $rotary-muted !important;
+  }
+
+  hr {
+    border-color: $rotary-border !important;
+  }
+}
