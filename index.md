@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: rotary
 title: Poway-Scripps Rotary Club
 hide: true
 show_reading_time: false

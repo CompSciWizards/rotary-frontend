@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+{%- include head.html -%}
+
+<body>
+    <header class="rotary-topbar">
+        <div class="rotary-topbar__top">
+            <div class="rotary-topbar__inner">
+                <a class="rotary-topbar__brand" href="{{ '/' | relative_url }}">
+                    <img src="{{ '/images/logo.png' | relative_url }}" alt="{{ site.title | escape }} logo">
+                </a>
+                <a class="rotary-topbar__member-login" href="{{ '/login' | relative_url }}">Member Login</a>
+            </div>
+        </div>
+        <nav class="rotary-topbar__bottom" aria-label="Primary navigation">
+            <div class="rotary-topbar__inner">
+                {%- assign current_url = page.url | default: '/' -%}
+                <a class="rotary-topbar__nav-link{% if current_url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+                <a class="rotary-topbar__nav-link" href="#">Stories</a>
+                <a class="rotary-topbar__nav-link" href="#">News</a>
+                <a class="rotary-topbar__nav-link" href="#">Donate</a>
+                <a class="rotary-topbar__nav-link" href="#">Sign Up for Bulletin</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <div class="opencs_root">
+                {{ content }}
+            </div>
+        </div>
+    </main>
+
+    {%- include themes/minima/footer.html -%}
+
+    {%- include mermaid.html -%}
+
+<style>
+    .rotary-topbar {
+        position: relative;
+        z-index: 1000;
+        width: 100%;
+        font-family: "Inter", "Roboto", "Open Sans", sans-serif;
+    }
+
+    .rotary-topbar__inner {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+
+    .rotary-topbar__top {
+        background-color: #0A3165;
+    }
+
+    .rotary-topbar__top .rotary-topbar__inner {
+        justify-content: space-between;
+        min-height: 64px;
+    }
+
+    .rotary-topbar__brand {
+        display: inline-flex;
+        align-items: center;
+        line-height: 0;
+    }
+
+    .rotary-topbar__brand img {
+        display: block;
+        width: auto;
+        height: 40px;
+    }
+
+    .rotary-topbar__member-login {
+        display: inline-block;
+        padding: 8px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 4px;
+        color: #ffffff;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .rotary-topbar__member-login:hover,
+    .rotary-topbar__member-login:focus-visible {
+        background-color: rgba(255, 255, 255, 0.12);
+        border-color: #ffffff;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .rotary-topbar__bottom {
+        background-color: #0C3C7C;
+    }
+
+    .rotary-topbar__bottom .rotary-topbar__inner {
+        min-height: 48px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .rotary-topbar__bottom .rotary-topbar__inner::-webkit-scrollbar {
+        display: none;
+    }
+
+    .rotary-topbar__nav-link {
+        display: inline-flex;
+        align-items: center;
+        align-self: stretch;
+        padding: 0 18px;
+        border-bottom: 3px solid transparent;
+        color: #ffffff;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .rotary-topbar__nav-link:first-child {
+        padding-left: 0;
+    }
+
+    .rotary-topbar__nav-link:hover,
+    .rotary-topbar__nav-link:focus-visible {
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .rotary-topbar__nav-link.is-active {
+        border-bottom-color: #F7A800;
+    }
+
+    @media (max-width: 600px) {
+        .rotary-topbar__inner {
+            padding: 0 16px;
+        }
+
+        .rotary-topbar__top .rotary-topbar__inner {
+            min-height: 56px;
+        }
+
+        .rotary-topbar__brand img {
+            height: 32px;
+        }
+
+        .rotary-topbar__nav-link {
+            padding: 0 14px;
+        }
+    }
+</style>
+
+</body>
+
+</html>
