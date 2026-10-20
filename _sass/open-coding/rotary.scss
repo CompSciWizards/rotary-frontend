@@ -172,6 +172,15 @@ body.rotary-layout {
     background-color: $rotary-bg !important;
     color: $rotary-text !important;
   }
+
+  .wrapper {
+    max-width: 1200px;
+    padding: 0;
+  }
+
+  .ocs__container {
+    max-width: 1200px;
+  }
 }
 
 :root.rotary-html .rotary-layout .opencs_root {
@@ -203,6 +212,13 @@ body.rotary-layout {
 
   .ocs__container {
     color: $rotary-text;
+  }
+
+  .ocs__description,
+  .ocs__lead {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .ocs__description,
