@@ -75,6 +75,7 @@ $rotary-link: #0c3c7c;
 }
 
 .rotary-topbar__bottom .rotary-topbar__inner {
+  justify-content: flex-end;
   min-height: 48px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -98,8 +99,8 @@ $rotary-link: #0c3c7c;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-:root.rotary-html .rotary-topbar__nav-link:first-child {
-  padding-left: 0;
+:root.rotary-html .rotary-topbar__nav-link:last-child {
+  padding-right: 0;
 }
 
 :root.rotary-html .rotary-topbar__nav-link:hover,
