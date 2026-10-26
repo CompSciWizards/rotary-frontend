@@ -17,10 +17,11 @@
             <div class="rotary-topbar__inner">
                 {%- assign current_url = page.url | default: '/' -%}
                 <a class="rotary-topbar__nav-link{% if current_url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
-                <a class="rotary-topbar__nav-link" href="#">Stories</a>
-                <a class="rotary-topbar__nav-link" href="#">Donate</a>
-                <a class="rotary-topbar__nav-link" href="#">Sign Up for Bulletin</a>
-                <a class="rotary-topbar__nav-link" href="#">News</a>
+                <a class="rotary-topbar__nav-link" href="/stories">Stories</a>
+                <a class="rotary-topbar__nav-link" href="/donate">Donate</a>
+                <a class="rotary-topbar__nav-link" href="/bulletin">Sign Up for Bulletin</a>
+                <a class="rotary-topbar__nav-link" href="/news">News</a>
+                <a class="rotary-topbar__nav-link{% if current_url contains 'systemsexplanations' %} is-active{% endif %}" href="{{ '/systemsexplanations/' | relative_url }}">How our systems work</a>
             </div>
         </nav>
     </header>
