@@ -37,12 +37,7 @@ show_reading_time: false
         <thead>
           <tr><th>Date</th><th>Program</th><th>Speaker</th></tr>
         </thead>
-        <tbody>
-          <tr><td>Sept 12, Sat</td><td>Poway Rotary Parade, 9-11 AM on Poway Road</td><td>Community Event</td></tr>
-          <tr><td>Sept 16</td><td>Robin's Nest Rescue</td><td>Jenny Ng</td></tr>
-          <tr><td>Sept 23</td><td>Special Needs Support</td><td>Tony Rubino</td></tr>
-          <tr><td>Nov 26</td><td>San Diego Blood Bank Drive</td><td>Service Project</td></tr>
-        </tbody>
+        <tbody id="upcoming-events-body"></tbody>
       </table>
     </div>
     <div class="ocs__links">
@@ -89,5 +84,7 @@ show_reading_time: false
     </div>
   </div>
 </div>
+
+<script type="module" src="{{ '/assets/js/rotary-events.js' | relative_url }}"></script>
 
 <!-- markdownlint-enable MD033 MD046 -->
