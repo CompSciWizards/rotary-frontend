@@ -39,9 +39,7 @@ Logging in answers two questions:
 
 A useful comparison is a wristband at an event: you show your ID once, get a wristband, and later staff only check the wristband. The cookie is the wristband.
 
-## Quick reference
-
-Each chart explains its terms inline, so it can stand on its own. This list is here if you want one place to look them up.
+## Words used on this page
 
 - **Frontend** — the web pages you see, built with Jekyll.
 - **Backend** — the server that stores users and checks passwords. This project has a **Flask** backend (Python) and a **Spring** backend (Java).
