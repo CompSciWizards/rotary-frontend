@@ -110,5 +110,13 @@ minima:
     - { platform: x, user_url: "https://x.com/Open_Coding" }
     - { platform: youtube, user_url: "https://www.youtube.com/@OpenCodingSociety" } 
   nav_pages:
-    - navigation/search.md
-    - navigation/about.md
+    - title: Home
+      url: /
+    - title: Stories
+      url: /stories/
+    - title: Donate
+      url: /donate/
+    - title: Sign Up for Bulletin
+      url: /bulletin/
+    - title: How our systems work
+      url: /systemsexplanations/
