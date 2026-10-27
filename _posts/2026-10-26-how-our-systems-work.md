@@ -1,8 +1,4 @@
 ---
-codemirror: false
-courses:
-  csse:
-    week: 4
 description: A plain-language walkthrough, with flowcharts, of how login works across the Jekyll frontend and Flask backend.
 layout: rotary
 permalink: /systemsexplanations/
