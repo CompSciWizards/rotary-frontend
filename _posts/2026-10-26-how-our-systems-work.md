@@ -39,7 +39,9 @@ Logging in answers two questions:
 
 A useful comparison is a wristband at an event: you show your ID once, get a wristband, and later staff only check the wristband. The cookie is the wristband.
 
-## Words used on this page
+## Quick reference
+
+Each chart explains its terms inline, so it can stand on its own. This list is here if you want one place to look them up.
 
 - **Frontend** — the web pages you see, built with Jekyll.
 - **Backend** — the server that stores users and checks passwords. This project has a **Flask** backend (Python) and a **Spring** backend (Java).
@@ -56,11 +58,16 @@ A useful comparison is a wristband at an event: you show your ID once, get a wri
 
 ```mermaid
 flowchart LR
-    B["Browser<br/>Jekyll frontend"] -->|"login request"| P["Flask API<br/>Python"]
-    B -->|"login request"| S["Spring API<br/>Java"]
-    P -->|"login cookie"| B
-    S -->|"login cookie"| B
-    P --- DB[("user database")]
+    B["<b>Browser</b><br/>the page you see<br/>(Jekyll frontend)"]
+    F["<b>Flask API</b><br/>Python server<br/>(API = a URL the page calls)"]
+    S["<b>Spring API</b><br/>Java server<br/>(second login option)"]
+    D[("<b>User database</b><br/>accounts + password hashes<br/>(hash = one-way scramble)")]
+
+    B -->|"sends ID + password"| F
+    B -->|"sends ID + password"| S
+    F -->|"checks the user"| D
+    F -->|"sets login cookie<br/>(remember-me note)"| B
+    S -->|"sets login cookie"| B
 ```
 
 The login page is a Jekyll page, but it calls two servers. The Python and Java logins start at the same time. This page explains the Flask side in detail because that is the code in `rotary-backend`.
@@ -69,17 +76,15 @@ The login page is a Jekyll page, but it calls two servers. The Python and Java l
 
 ```mermaid
 flowchart TD
-    A["Enter GitHub ID and password"] --> B["Click Login"]
-    B --> C["Flask login<br/>POST /api/authenticate"]
-    B --> D["Spring login<br/>POST /authenticate"]
-    C --> E{"Password correct?"}
-    E -- "no" --> X["Show an error"]
-    E -- "yes" --> F["Flask sets a login cookie"]
-    F --> G["Browser asks /api/id<br/>Who am I?"]
-    G --> H{"Cookie accepted?"}
-    H -- "yes" --> Y["Open profile page"]
+    A["<b>1. Enter GitHub ID + password, click Login</b><br/>the browser sends two requests"] --> C["<b>Flask login</b><br/>POST /api/authenticate<br/>(POST = send data)"]
+    A --> D["<b>Spring login</b><br/>POST /authenticate<br/>(Java path, on failure it<br/>creates an account and retries)"]
+    C --> E{"<b>2. Password hash matches?</b><br/>(hash = one-way scramble)"}
+    E -- "no" --> X["<b>401 Unauthorized</b><br/>login failed"]
+    E -- "yes" --> F["<b>3. Set cookie, then check /api/id</b><br/>(cookie = browser's login note)"]
+    F --> H{"<b>4. Cookie accepted?</b><br/>(valid and not expired)"}
+    H -- "yes" --> Y["<b>Open profile page</b>"]
     H -- "no" --> X
-    D -->|"success"| Y
+    D -- "success" --> Y
 ```
 
 The Spring branch is separate. If the Spring login fails, the page tries to create a Spring account and then logs in again. That is why a failed Java login may still end with a new account rather than an error.
@@ -90,14 +95,14 @@ On the Flask path, after the login succeeds, the browser calls `/api/id` to prov
 
 ```mermaid
 flowchart TD
-    A["POST /api/authenticate"] --> B{"ID and password present?"}
-    B -- "no" --> X["400 or 401 error"]
-    B -- "yes" --> C["Find the user by ID"]
-    C --> D{"Password hash matches?"}
-    D -- "no" --> Y["401 invalid login"]
-    D -- "yes" --> E["Make a JWT<br/>user ID + version + expiry"]
-    E --> F["Put the JWT in a cookie<br/>valid for 7 days"]
-    F --> G["Return the user's name,<br/>role, and classes"]
+    A["<b>POST /api/authenticate</b><br/>(send ID + password)"] --> B{"<b>ID and password present?</b>"}
+    B -- "no" --> X["<b>400 Bad Request / 401</b><br/>missing or invalid login"]
+    B -- "yes" --> C["<b>Find user by GitHub ID</b><br/>in the user database"]
+    C --> D{"<b>Password hash matches?</b><br/>(hash = one-way scramble;<br/>the real password is never stored)"}
+    D -- "no" --> Y["<b>401 Unauthorized</b><br/>invalid login"]
+    D -- "yes" --> E["<b>Create JWT</b><br/>signed note: user ID,<br/>token version, expiry<br/>(version changes on password reset)"]
+    E --> F["<b>Put JWT in a cookie</b><br/>browser stores and resends it<br/>for 7 days"]
+    F --> G["<b>Return name, role, classes</b><br/>what the profile page needs"]
 ```
 
 The password is never stored as plain text. When the account is created, Flask stores a hash. On login, it hashes the typed password and compares the two. A wrong password gets a **401**, which means "not authenticated".
@@ -108,16 +113,11 @@ The JWT is signed with the server's `SECRET_KEY`. If someone edits the user ID i
 
 ```mermaid
 flowchart TD
-    A["Request a protected API URL<br/>for example GET /api/id"] --> B{"Valid Flask session?"}
-    B -- "yes" --> E["User is logged in"]
-    B -- "no" --> C{"JWT cookie present?"}
-    C -- "no" --> X["401: please log in"]
-    C -- "yes" --> D{"JWT valid, unexpired,<br/>and version matches?"}
-    D -- "no" --> X
-    D -- "yes" --> E
-    E --> F{"Role required and<br/>not allowed?"}
-    F -- "yes" --> G["403: logged in,<br/>but not permitted"]
-    F -- "no" --> H["Run the request"]
+    A["<b>Request a protected URL</b><br/>e.g. GET /api/id<br/>(GET = read data)"] --> B{"<b>Logged in?</b><br/>valid server session or signed JWT<br/>(JWT = login note, expiry + version checked)"}
+    B -- "no" --> X["<b>401 Unauthorized</b><br/>please log in"]
+    B -- "yes" --> F{"<b>Role allowed?</b><br/>(student, teacher, admin)"}
+    F -- "no" --> G["<b>403 Forbidden</b><br/>logged in, but not allowed"]
+    F -- "yes" --> H["<b>Run the request</b>"]
 ```
 
 Flask accepts **either** a Flask session or a JWT cookie. It also accepts a token in an `Authorization: Bearer ...` header. The check lives in `api/authorize.py` and is called `token_required`. A **401** means "I do not know who you are". A **403** means "I know who you are, but you are not allowed to do this".
