@@ -4,26 +4,7 @@
 {%- include head.html -%}
 
 <body class="rotary-layout">
-    <header class="rotary-topbar">
-        <div class="rotary-topbar__top">
-            <div class="rotary-topbar__inner">
-                <a class="rotary-topbar__brand" href="{{ '/' | relative_url }}">
-                    <img src="{{ '/images/logo.png' | relative_url }}" alt="{{ site.title | escape }} logo">
-                </a>
-                <a class="rotary-topbar__member-login" href="{{ '/login' | relative_url }}">Member Login</a>
-            </div>
-        </div>
-        <nav class="rotary-topbar__bottom" aria-label="Primary navigation">
-            <div class="rotary-topbar__inner">
-                {%- assign current_url = page.url | default: '/' -%}
-                <a class="rotary-topbar__nav-link{% if current_url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
-                <a class="rotary-topbar__nav-link" href="{{ '/stories/' | relative_url }}">Stories</a>
-                <a class="rotary-topbar__nav-link" href="{{ '/donate/' | relative_url }}">Donate</a>
-                <a class="rotary-topbar__nav-link" href="{{ '/bulletin/' | relative_url }}">Sign Up for Bulletin</a>
-                <a class="rotary-topbar__nav-link{% if current_url contains 'systemsexplanations' %} is-active{% endif %}" href="{{ '/systemsexplanations/' | relative_url }}">How our systems work</a>
-            </div>
-        </nav>
-    </header>
+    {%- include themes/minima/header.html -%}
 
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
