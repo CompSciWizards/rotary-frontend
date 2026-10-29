@@ -22,7 +22,23 @@
                 <div class="trigger">
                     {%- for item in site.minima.nav_pages -%}
                     {%- if item.url -%}
+                    {%- if item.children -%}
+                    <div class="page-link-group">
+                        <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>
+                        <button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-label="{{ item.title | escape }} submenu">
+                            <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false">
+                                <path d="M1.5 4L6 8l4.5-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            </svg>
+                        </button>
+                        <div class="nav-submenu">
+                            {%- for child in item.children -%}
+                            <a class="nav-submenu-link" href="{{ child.url | relative_url }}">{{ child.title | escape }}</a>
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                    {%- else -%}
                     <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>
+                    {%- endif -%}
                     {%- elsif item == 'navigation/course.md' -%}
                     <a class="page-link" data-course-entry data-default-course="{{ site.default_course | default: 'csse' | escape }}" href="{{ site.baseurl }}/navigation/courses/{{ site.default_course | default: 'csse' }}/">{{ site.default_course | default: 'csse' | upcase | escape }}</a>
                     {%- else -%}
@@ -54,3 +70,43 @@
 
     <script type="module" src="{{ site.baseurl }}/assets/js/api/login.js"></script>
     <script type="module" src="{{ site.baseurl }}/assets/js/api/dm-notifications.js"></script>
+    <script>
+        (function () {
+            function closeGroup(group) {
+                group.classList.remove("open");
+                var toggle = group.querySelector(".nav-submenu-toggle");
+                if (toggle) {
+                    toggle.setAttribute("aria-expanded", "false");
+                }
+            }
+
+            document.querySelectorAll(".nav-submenu-toggle").forEach(function (toggle) {
+                toggle.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    var group = toggle.closest(".page-link-group");
+                    var isOpen = group.classList.toggle("open");
+                    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                document.querySelectorAll(".page-link-group.open").forEach(function (group) {
+                    if (!group.contains(event.target)) {
+                        closeGroup(group);
+                    }
+                });
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    document.querySelectorAll(".page-link-group.open").forEach(function (group) {
+                        var toggle = group.querySelector(".nav-submenu-toggle");
+                        closeGroup(group);
+                        if (toggle) {
+                            toggle.focus();
+                        }
+                    });
+                }
+            });
+        })();
+    </script>

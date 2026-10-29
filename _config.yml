@@ -114,15 +114,49 @@ minima:
       url: /
     - title: What's Playing
       url: /whatsplaying/
+      children:
+        - title: The Wisdom of Eve
+          url: /show-the-wisdom-of-eve/
+        - title: 2027 Season
+          url: /season-45-2027/
     - title: Ticket Info
       url: /ticketinfo/
+      children:
+        - title: Box Office and Pricing
+          url: /ticket-info/
+        - title: Season Tickets
+          url: /ticket-info/#seasontickets
+        - title: Flex Subscription
+          url: /ticket-info/#flexsubscription
     - title: Auditions
       url: /auditions/
+      children:
+        - title: The Shark is Broken
+          url: /audition-the-shark-is-broken/
     - title: Plan Your Visit
       url: /planyourvisit/
+      children:
+        - title: Map and Directions
+          url: /plan-your-visit/#planyourvisit
+        - title: Parking and Elevator Access
+          url: /plan-your-visit/#planyourvisit
+        - title: Assisted Listening Devices
+          url: /plan-your-visit/#ALD
+        - title: Snacks and Beverages
+          url: /plan-your-visit/#snacks
     - title: About us
       url: /about/
+      children:
+        - title: Board of Directors
+          url: /about-us/#bod
+        - title: Management
+          url: /about-us/#team
     - title: Support Us
       url: /support/
+      children:
+        - title: Become a Member or Donate
+          url: /support-us/#membership
+        - title: Volunteer
+          url: /support-us/#volunteer
     - title: How our systems work
       url: /systemsexplanations/
