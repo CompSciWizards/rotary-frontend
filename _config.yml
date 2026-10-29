@@ -112,11 +112,17 @@ minima:
   nav_pages:
     - title: Home
       url: /
-    - title: Stories
-      url: /stories/
-    - title: Donate
-      url: /donate/
-    - title: Sign Up for Bulletin
-      url: /bulletin/
+    - title: What's Playing
+      url: /whatsplaying/
+    - title: Ticket Info
+      url: /ticketinfo/
+    - title: Auditions
+      url: /auditions/
+    - title: Plan Your Visit
+      url: /planyourvisit/
+    - title: About us
+      url: /about/
+    - title: Support Us
+      url: /support/
     - title: How our systems work
       url: /systemsexplanations/
