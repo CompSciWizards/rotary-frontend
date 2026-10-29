@@ -3,6 +3,7 @@ layout: rotary
 title: Poway-Scripps Rotary Club
 hide: true
 show_reading_time: false
+full_width: true
 ---
 
 <!-- markdownlint-disable MD033 MD046 -->
