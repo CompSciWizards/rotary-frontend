@@ -5,21 +5,6 @@ permalink: /systemsexplanations/
 title: "How Our Systems Work: Login"
 ---
 
-<style>
-  :root {
-    --theme: default;
-  }
-
-  .ocs__container .mermaid {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    overflow-x: auto;
-    background: var(--panel);
-    border: 1px solid var(--ui-border);
-    border-radius: 1rem;
-  }
-</style>
-
 <div class="ocs__container" markdown="1">
 
 <div class="ocs__badge">Open Coding Society</div>

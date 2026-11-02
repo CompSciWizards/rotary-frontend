@@ -1,44 +1,34 @@
 // OCS design-system layer for PowPAC pages.
 //
-// These imports pull in the shared Open Coding Society elements exactly as
-// they are used elsewhere on the site. PowPAC only maps the OCS theme tokens
-// to its own palette and typography; the OCS partials are not modified.
+// This file only imports the shared Open Coding Society element grammar and
+// overrides the variables that grammar exposes. No PowPAC component styles are
+// defined here, so every page keeps the stock OCS element behavior.
 
 @import "open-coding/theme/legacy/root-color-map";
 @import "open-coding/mixins/variables";
-@import "open-coding/materials/main";
 @import "open-coding/mixins/forms";
 @import "open-coding/mixins/grid";
 
-@import "open-coding/elements/containers/main";
-@import "open-coding/elements/buttons/includes";
-@import "open-coding/elements/grids/main";
-@import "open-coding/elements/tables/main";
-@import "open-coding/elements/forms/fields/main";
-@import "open-coding/elements/forms/labels/main";
-@import "open-coding/elements/text_input/styles";
-@import "open-coding/elements/toggles/main";
-@import "open-coding/elements/images/main";
+@import "open-coding/elements/main";
 @import "open-coding/elements/capstone/main";
-@import "open-coding/elements/capstone/status-pills";
 
-// PowPAC values for the OCS theme tokens.
+// PowPAC values for the OCS theme variables.
 :root {
   --theme: default;
-  --pref-bg-color: var(--paper);
-  --pref-text-color: var(--ink);
-  --pref-accent-color: var(--maroon);
-  --pref-font-family: var(--font-body);
-  --pref-font-size: 14px;
+
+  --pref-bg-color: #ffffff;
+  --pref-text-color: #111111;
+  --pref-accent-color: #5b1515;
+  --pref-font-family: "Tinos", "Times New Roman", Times, serif;
+  --pref-font-size: 18px;
   --pref-success-color: #2e7d4f;
-  --text-muted: var(--muted);
+  --text-muted: #626262;
 
-  --panel: var(--paper);
-  --panel-mid: var(--soft);
-  --ui-bg: var(--soft-warm);
-  --ui-border: var(--line);
+  --panel: #ffffff;
+  --panel-mid: #f7f5f1;
+  --ui-bg: #f1ece3;
+  --ui-border: #ded9cf;
 
-  // Alert tones need to stay legible on PowPAC's white panels.
   --red: #b42318;
   --warn: #a67c00;
   --green: #2e7d4f;

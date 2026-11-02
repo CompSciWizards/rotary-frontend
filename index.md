@@ -17,13 +17,12 @@ full_width: true
 
   <div class="ocs__split">
     <div class="ocs__card">
-      <img
-        class="ocs__image-frame"
-        src="{{ '/images/powpac/wisdom-of-eve.jpg' | relative_url }}"
-        alt="The Wisdom of Eve show artwork"
-        width="800"
-        height="1000"
-      >
+      <div class="ocs__image-frame ocs__image-frame--cover">
+        <img
+          src="{{ '/images/powpac/wisdom-of-eve.jpg' | relative_url }}"
+          alt="The Wisdom of Eve show artwork"
+        >
+      </div>
     </div>
     <div class="ocs__card">
       <h2 class="ocs__section-title">Performance Schedule</h2>
@@ -85,28 +84,26 @@ full_width: true
 
   <div class="ocs__grid ocs__grid--col2">
     <div class="ocs__grid-cell">
-      <img
-        class="ocs__image-frame"
-        src="{{ '/images/powpac/wisdom-of-eve.jpg' | relative_url }}"
-        alt="The Wisdom of Eve show artwork"
-        width="800"
-        height="1000"
-        loading="lazy"
-      >
+      <div class="ocs__image-frame ocs__image-frame--cover">
+        <img
+          src="{{ '/images/powpac/wisdom-of-eve.jpg' | relative_url }}"
+          alt="The Wisdom of Eve show artwork"
+          loading="lazy"
+        >
+      </div>
       <span class="ocs__status-pill ocs__status-pill--good">Now Playing</span>
       <h3>The Wisdom of Eve</h3>
       <p class="ocs__text">November 13 – December 13, 2026</p>
       <a class="ocs__btn small" href="https://www.powpac.org/show-the-wisdom-of-eve/">Learn More</a>
     </div>
     <div class="ocs__grid-cell">
-      <img
-        class="ocs__image-frame"
-        src="{{ '/images/powpac/season-45.jpg' | relative_url }}"
-        alt="PowPAC 2027 Season 45 artwork"
-        width="800"
-        height="1000"
-        loading="lazy"
-      >
+      <div class="ocs__image-frame ocs__image-frame--cover">
+        <img
+          src="{{ '/images/powpac/season-45.jpg' | relative_url }}"
+          alt="PowPAC 2027 Season 45 artwork"
+          loading="lazy"
+        >
+      </div>
       <span class="ocs__status-pill ocs__status-pill--neutral">2027 Season</span>
       <h3>Season 45</h3>
       <p class="ocs__text">January – December 2027</p>

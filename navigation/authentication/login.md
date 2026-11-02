@@ -26,7 +26,7 @@ description: Log in to your account or create a new one.
           <label class="ocs__label" for="password">Password</label>
           <input class="ocs__input" type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required>
         </div>
-        <p id="message" class="ocs__text" role="status" aria-live="polite" style="color: var(--red);"></p>
+        <p id="message" class="ocs__text" role="status" aria-live="polite"></p>
         <div class="ocs__links">
           <button type="submit" class="ocs__btn accent fill">Login</button>
         </div>
@@ -63,7 +63,7 @@ description: Log in to your account or create a new one.
             <span class="ocs__toggle-label">I'm a Volunteer</span>
           </label>
         </p>
-        <p id="signupMessage" class="ocs__text" role="status" aria-live="polite" style="color: var(--green);"></p>
+        <p id="signupMessage" class="ocs__text" role="status" aria-live="polite"></p>
         <div class="ocs__links">
           <button type="submit" class="ocs__btn accent fill" id="signupButton">Sign Up</button>
         </div>
@@ -275,7 +275,6 @@ description: Log in to your account or create a new one.
                 // Re-enable the button if there is an error
                 signupButton.disabled = false;
                 signupButton.classList.remove("disabled");
-                signupButton.style.backgroundColor = ''; // Reset to default color
             });
     }
     function javaDatabase() {
