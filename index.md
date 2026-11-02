@@ -1,6 +1,6 @@
 ---
 layout: powpac
-title: Poway-Scripps Rotary Club
+title: Poway Performing Arts Company
 hide: true
 show_reading_time: false
 full_width: true
@@ -9,83 +9,124 @@ full_width: true
 <!-- markdownlint-disable MD033 MD046 -->
 
 <div class="ocs__container">
-  <span class="ocs__badge">Service Above Self</span>
-  <h1>Welcome to Poway-Scripps Rotary</h1>
+  <span class="ocs__badge">Now Playing</span>
+  <h1>The Wisdom of Eve</h1>
   <p class="ocs__description">
-    Neighbors, friends, and community leaders coming together for local service and fellowship in Poway and Scripps Ranch.
+    November 13 – December 13, 2026 · PowPAC, Poway
   </p>
 
+  <div class="ocs__split">
+    <div class="ocs__card">
+      <img
+        class="ocs__image-frame"
+        src="{{ '/images/powpac/wisdom-of-eve.jpg' | relative_url }}"
+        alt="The Wisdom of Eve show artwork"
+        width="800"
+        height="1000"
+      >
+    </div>
+    <div class="ocs__card">
+      <h2 class="ocs__section-title">Performance Schedule</h2>
+      <div class="ocs__table-wrap">
+        <table class="ocs__table">
+          <tbody>
+            <tr><th scope="row">Fridays &amp; Saturdays</th><td>7:30 PM</td></tr>
+            <tr><th scope="row">Sundays</th><td>2:00 PM</td></tr>
+            <tr><th scope="row">Saturday matinees</th><td>Nov 21 &amp; Dec 5 · 2:00 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ocs__description">
+        A drama by Mary Orr, directed by Kira Blaskovich and produced by Deb Zimmer and
+        Cheryle Tkach. Adapted from the story that inspired <em>All About Eve</em>, the play
+        follows an aspiring actress as she works her way into New York’s theatre world.
+      </p>
+      <div class="ocs__links ocs__links--wide">
+        <a class="ocs__btn accent fill" href="https://app.arts-people.com/index.php?ticketing=powpa">Buy Tickets</a>
+        <a class="ocs__btn" href="https://www.powpac.org/show-the-wisdom-of-eve/">Learn More</a>
+      </div>
+    </div>
+  </div>
+
   <div class="ocs__card">
-    <h3>We Meet In Person</h3>
-    <p class="ocs__description">
-      Wednesdays at 11:30 AM at Kaminski's BBQ, 12735 Poway Road, Poway, CA 92064.
-      Dark last Wednesday of the month for socials and service projects.
-      Guests are welcome. Lunch is $30.
+    <span class="ocs__status-pill ocs__status-pill--warn">Season 45</span>
+    <h2>Announcing Our 2027 Season</h2>
+    <p class="ocs__text">
+      We have an exciting new lineup of performances planned for next year. Explore the
+      shows coming to PowPAC for our 45th season, running January through December 2027.
+    </p>
+    <div class="ocs__links">
+      <a class="ocs__btn accent fill" href="https://www.powpac.org/season-45-2027/">Explore the 2027 Season</a>
+    </div>
+  </div>
+
+  <h2>Upcoming Shows and Events</h2>
+
+  <div class="ocs__grid ocs__grid--col2">
+    <div class="ocs__grid-cell">
+      <img
+        class="ocs__image-frame"
+        src="{{ '/images/powpac/wisdom-of-eve.jpg' | relative_url }}"
+        alt="The Wisdom of Eve show artwork"
+        width="800"
+        height="1000"
+        loading="lazy"
+      >
+      <span class="ocs__status-pill ocs__status-pill--good">Now Playing</span>
+      <h3>The Wisdom of Eve</h3>
+      <p class="ocs__text">November 13 – December 13, 2026</p>
+      <a class="ocs__btn small" href="https://www.powpac.org/show-the-wisdom-of-eve/">Learn More</a>
+    </div>
+    <div class="ocs__grid-cell">
+      <img
+        class="ocs__image-frame"
+        src="{{ '/images/powpac/season-45.jpg' | relative_url }}"
+        alt="PowPAC 2027 Season 45 artwork"
+        width="800"
+        height="1000"
+        loading="lazy"
+      >
+      <span class="ocs__status-pill ocs__status-pill--neutral">2027 Season</span>
+      <h3>Season 45</h3>
+      <p class="ocs__text">January – December 2027</p>
+      <a class="ocs__btn small" href="https://www.powpac.org/season-45-2027/">Learn More</a>
+    </div>
+  </div>
+
+  <div class="ocs__card">
+    <h2>About PowPAC</h2>
+    <p class="ocs__text">
+      PowPAC, The Poway Performing Arts Company, was established in 1981 with the mission
+      to produce and present diverse and balanced works of the highest standards and to
+      provide an environment for the growth and education of the artist, the audience, and
+      the community at large.
+    </p>
+    <p class="ocs__text">
+      Located at 13250 Poway Rd. in Poway, California, PowPAC is a 501(c)(3) non-profit
+      organization fully run by volunteers. We are a proud member of AACT, ACT-SD, the San
+      Diego Performing Arts League, and the Poway Chamber of Commerce, and we welcome and
+      encourage volunteers of all ethnicities, gender identities, and abilities to be part
+      of our organization.
     </p>
     <div class="ocs__links ocs__links--wide">
-      <a class="ocs__btn pill accent fill" href="https://powayscrippsrotary.org/form/membership-inquiry">Join Us</a>
-      <a class="ocs__btn pill" href="https://powayscrippsrotary.org/donate">Donate</a>
-      <a class="ocs__btn pill" href="https://powayscrippsrotary.org/">Club Site</a>
-    </div>
-  </div>
-
-  <h2>Upcoming Events</h2>
-  <p class="ocs__description">Weekly programs and service projects. Content reference: powayscrippsrotary.org.</p>
-
-  <div class="ocs__card">
-    <div class="ocs__table-wrap">
-      <table class="ocs__table">
-        <thead>
-          <tr><th>Date</th><th>Program</th><th>Speaker</th></tr>
-        </thead>
-        <tbody id="upcoming-events-body"></tbody>
-      </table>
-    </div>
-    <div class="ocs__links">
-      <a class="ocs__btn small alert-green fill" href="https://powayscrippsrotary.org/">Full Calendar</a>
-      <a class="ocs__btn small alert-yellow fill" href="https://powayscrippsrotary.org/singleemail/contactus">Sign Up for Bulletin</a>
-    </div>
-  </div>
-
-  <h2>Homepage Stories</h2>
-  <p class="ocs__description">A brief look at recent club highlights.</p>
-
-  <div class="ocs__grid ocs__grid--card">
-    <div class="ocs__grid-cell">
-      <span class="ocs__status-pill ocs__status-pill--good">Parade</span>
-      <h3>RB Band Wins Top Band Award</h3>
-      <p>Rancho Bernardo Band earned Top Band honors at the Poway Parade. Awesome job!</p>
-      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/rb-band-wins-top-band-award">Read Story</a>
-    </div>
-    <div class="ocs__grid-cell">
-      <span class="ocs__status-pill ocs__status-pill--neutral">Community</span>
-      <h3>Mayor's Award to General Atomics</h3>
-      <p>Thanks to General Atomics for sponsoring the parade and winning the Mayor's Award.</p>
-      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/mayor-s-award-to-general-atomics">Read Story</a>
-    </div>
-    <div class="ocs__grid-cell">
-      <span class="ocs__status-pill ocs__status-pill--warn">Service</span>
-      <h3>Chollas View Food Pantry Build</h3>
-      <p>Members built a food pantry for elementary families and earned an appreciation award.</p>
-      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/we-do-amazing-things">Read Story</a>
-    </div>
-    <div class="ocs__grid-cell">
-      <span class="ocs__status-pill ocs__status-pill--good">Youth</span>
-      <h3>$3,000 in Scholarships Awarded</h3>
-      <p>Celebrating local students showing leadership through Service Above Self.</p>
-      <a class="ocs__btn small" href="https://powayscrippsrotary.org/Stories/scholarship-winners">Read Story</a>
+      <a class="ocs__btn accent fill" href="https://www.powpac.org/ticket-info/#seasontickets">Purchase Season Tickets</a>
+      <a class="ocs__btn" href="https://app.arts-people.com/index.php?membership=powpa">Become a Donor</a>
+      <a class="ocs__btn" href="https://app.arts-people.com/index.php?mailing_list=powpa">Join Our Mailing List</a>
     </div>
   </div>
 
   <div class="ocs__card">
-    <p class="ocs__callout">New here? Join us for lunch on Wednesday or explore our projects and stories on the official club site.</p>
+    <p class="ocs__callout">
+      Questions about tickets or planning a visit? Call the box office at
+      <a href="tel:+18586798085">858.679.8085</a> or email
+      <a href="mailto:boxoffice@powpac.org">boxoffice@powpac.org</a>.
+    </p>
     <div class="ocs__links">
-      <a class="ocs__btn accent fill" href="https://powayscrippsrotary.org/SitePage/our-projects-what-we-do">Our Projects</a>
-      <a class="ocs__btn" href="https://powayscrippsrotary.org/stories">All Stories</a>
+      <a class="ocs__btn" href="https://maps.app.goo.gl/bctgNKQcWthjvFrd7" target="_blank" rel="noopener">Map &amp; Directions</a>
+      <a class="ocs__btn" href="https://www.powpac.org/plan-your-visit/">Plan Your Visit</a>
+      <a class="ocs__btn" href="https://www.powpac.org/support-us/#volunteer">Volunteer</a>
     </div>
   </div>
 </div>
-
-<script type="module" src="{{ '/assets/js/rotary-events.js' | relative_url }}"></script>
 
 <!-- markdownlint-enable MD033 MD046 -->
