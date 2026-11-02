@@ -62,6 +62,27 @@ full_width: true
 
   <h2>Upcoming Shows and Events</h2>
 
+  <div class="ocs__links">
+    <span id="upcoming-events-admin-link" hidden>
+      <a class="ocs__btn small" href="{{ '/events' | relative_url }}">Manage events</a>
+    </span>
+  </div>
+
+  <div class="ocs__table-wrap">
+    <table class="ocs__table">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Program</th>
+          <th scope="col">Speaker</th>
+        </tr>
+      </thead>
+      <tbody id="upcoming-events-body">
+        <tr><td colspan="3">Loading events…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <div class="ocs__grid ocs__grid--col2">
     <div class="ocs__grid-cell">
       <img
@@ -128,5 +149,8 @@ full_width: true
     </div>
   </div>
 </div>
+
+<script type="module"
+        src="{{ '/assets/js/rotary-events.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 <!-- markdownlint-enable MD033 MD046 -->
