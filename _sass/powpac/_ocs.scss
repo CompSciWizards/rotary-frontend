@@ -6,6 +6,7 @@
 
 @import "open-coding/theme/legacy/root-color-map";
 @import "open-coding/mixins/variables";
+@import "open-coding/materials/main";
 @import "open-coding/mixins/forms";
 @import "open-coding/mixins/grid";
 
@@ -13,6 +14,10 @@
 @import "open-coding/elements/buttons/includes";
 @import "open-coding/elements/grids/main";
 @import "open-coding/elements/tables/main";
+@import "open-coding/elements/forms/fields/main";
+@import "open-coding/elements/forms/labels/main";
+@import "open-coding/elements/text_input/styles";
+@import "open-coding/elements/toggles/main";
 @import "open-coding/elements/capstone/main";
 @import "open-coding/elements/capstone/status-pills";
 
