@@ -1,6 +1,6 @@
 ---
 description: A plain-language walkthrough, with flowcharts, of how login works across the Jekyll frontend and Flask backend.
-layout: rotary
+layout: powpac
 permalink: /systemsexplanations/
 title: "How Our Systems Work: Login"
 ---
