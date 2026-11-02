@@ -1,4 +1,4 @@
-import { pythonURI, fetchOptions } from './api/config.js';
+import { pythonURI, fetchOptions, baseurl } from './api/config.js';
 
 const EVENTS_URL = `${pythonURI}/api/rotary/events`;
 const FAILURE_MESSAGE = 'Failed to fetch upcoming events.';
@@ -6,6 +6,7 @@ const UPCOMING_EMPTY_MESSAGE = 'No upcoming events.';
 const ALL_EMPTY_MESSAGE = 'No events yet.';
 const SIGN_IN_NOTE = 'Sign in as an administrator to add or remove events.';
 const NON_ADMIN_NOTE = 'Only an administrator can add or remove events.';
+const VERIFY_FAILED_NOTE = 'Could not verify your account. Please try again.';
 
 // Fixed locale so the displayed date does not follow the browser's locale.
 const DATE_FORMATTER = new Intl.DateTimeFormat('en-US', {
@@ -59,6 +60,24 @@ function renderMessage(tbody, columns, message) {
     tbody.replaceChildren(row);
 }
 
+function renderUpcomingEmpty(tbody, isAdmin) {
+    renderMessage(tbody, 3, UPCOMING_EMPTY_MESSAGE);
+
+    if (!isAdmin) {
+        return;
+    }
+
+    const cell = tbody.querySelector('td');
+    if (!cell) {
+        return;
+    }
+
+    const link = document.createElement('a');
+    link.href = `${baseurl}/events`;
+    link.textContent = 'Manage events';
+    cell.append(' ', link);
+}
+
 function sortByDate(events) {
     return [...events].sort((left, right) => (
         String(left.date ?? '').localeCompare(String(right.date ?? ''))
@@ -101,6 +120,15 @@ async function loadUpcomingEvents() {
         return;
     }
 
+    // The homepage table stays read-only, but an Admin gets a link to the page
+    // where events can be managed.
+    const { user } = await resolveCurrentUser();
+    const isAdmin = user?.is_admin === true;
+    const manageLink = document.getElementById('upcoming-events-admin-link');
+    if (manageLink) {
+        manageLink.hidden = !isAdmin;
+    }
+
     try {
         const events = await requestEvents();
         const today = todayISO();
@@ -109,7 +137,7 @@ async function loadUpcomingEvents() {
         ));
 
         if (upcoming.length === 0) {
-            renderMessage(tbody, 3, UPCOMING_EMPTY_MESSAGE);
+            renderUpcomingEmpty(tbody, isAdmin);
             return;
         }
 
@@ -155,15 +183,30 @@ function setAdminVisibility(isAdmin) {
     if (actionsHeader) {
         actionsHeader.hidden = !isAdmin;
     }
+
+    // Keep the Actions header and each row's cell count in sync: renderAdminEvents
+    // reads adminState.isAdmin to choose between 3 and 4 cells.
+    renderAdminEvents(adminState.events);
 }
 
-function showAccessNote(message) {
+function showAccessNote(message, showLogin = false) {
     const { note } = getAdminElements();
     if (!note) {
         return;
     }
 
-    note.textContent = message;
+    const messageElement = document.getElementById('events-access-message');
+    const loginLink = document.getElementById('events-access-login');
+
+    if (messageElement) {
+        messageElement.textContent = message;
+    } else {
+        note.textContent = message;
+    }
+    if (loginLink) {
+        loginLink.hidden = !showLogin;
+    }
+
     note.hidden = false;
 }
 
@@ -184,9 +227,12 @@ function showAdminStatus(message) {
 // login.js sets window.user on pages that load it. PowPAC pages do not load
 // login.js, so read the existing session here instead of building a second
 // login flow. On pages where login.js already ran, its value is reused.
+//
+// The result keeps the HTTP status so callers can tell 401 (no session) from
+// 403 (signed in but not allowed, e.g. an account pending verification).
 async function resolveCurrentUser() {
     if (window.user) {
-        return window.user;
+        return { status: 200, user: window.user, message: '' };
     }
 
     try {
@@ -194,16 +240,20 @@ async function resolveCurrentUser() {
             ...fetchOptions,
             method: 'GET',
         });
+        const payload = await readJson(response);
 
-        if (!response.ok) {
-            return null;
+        if (response.ok && payload && typeof payload === 'object') {
+            window.user = payload;
+            return { status: response.status, user: payload, message: '' };
         }
 
-        const user = await response.json();
-        window.user = user;
-        return user;
+        return {
+            status: response.status,
+            user: null,
+            message: payload?.message || '',
+        };
     } catch (error) {
-        return null;
+        return { status: 0, user: null, message: '' };
     }
 }
 
@@ -286,14 +336,12 @@ function validateEvent({ date, program, speaker }) {
 }
 
 function handleAccessError(status, payload) {
-    const message = payload?.message
-        || (status === 401
-            ? SIGN_IN_NOTE
-            : 'You do not have permission to add or remove events.');
+    const message = status === 401
+        ? SIGN_IN_NOTE
+        : payload?.message || NON_ADMIN_NOTE;
 
     setAdminVisibility(false);
-    showAccessNote(message);
-    renderAdminEvents(adminState.events);
+    showAccessNote(message, status === 401);
     showFormMessage(message);
 }
 
@@ -401,7 +449,7 @@ async function submitEvent(event) {
     event.preventDefault();
 
     if (!adminState.isAdmin) {
-        showAccessNote(SIGN_IN_NOTE);
+        showAccessNote(NON_ADMIN_NOTE);
         return;
     }
 
@@ -464,17 +512,24 @@ async function submitEvent(event) {
     }
 }
 
-function applyUser(user) {
-    appliedUser = user;
+function applyUser({ status, user, message }) {
+    appliedUser = user ?? null;
 
-    if (window.user?.is_admin === true) {
+    if (user?.is_admin === true) {
         setAdminVisibility(true);
         hideAccessNote();
         return;
     }
 
+    // 401 means there is no session, so offer the login page. 403 means the
+    // viewer is signed in but not allowed (role, or account pending
+    // verification), so show the backend's reason without a login link.
+    const note = status === 401
+        ? SIGN_IN_NOTE
+        : message || (status === 403 || user ? NON_ADMIN_NOTE : VERIFY_FAILED_NOTE);
+
     setAdminVisibility(false);
-    showAccessNote(user ? NON_ADMIN_NOTE : SIGN_IN_NOTE);
+    showAccessNote(note, status === 401);
 }
 
 // login.js sets window.user asynchronously on pages that load it. If this page
@@ -487,7 +542,7 @@ function watchForLateUser() {
 
         if (window.user && window.user !== appliedUser) {
             window.clearInterval(timer);
-            applyUser(window.user);
+            applyUser({ status: 200, user: window.user, message: '' });
             refreshAdminEvents();
             return;
         }
@@ -510,8 +565,8 @@ async function initAdminPage() {
 
     // Wait for the current user before deciding whether the controls belong on
     // the page, so an early empty read cannot hide them permanently.
-    const user = await resolveCurrentUser();
-    applyUser(user);
+    const currentUser = await resolveCurrentUser();
+    applyUser(currentUser);
 
     await refreshAdminEvents();
     watchForLateUser();

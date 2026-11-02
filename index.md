@@ -62,6 +62,12 @@ full_width: true
 
   <h2>Upcoming Shows and Events</h2>
 
+  <div class="ocs__links">
+    <span id="upcoming-events-admin-link" hidden>
+      <a class="ocs__btn small" href="{{ '/events' | relative_url }}">Manage events</a>
+    </span>
+  </div>
+
   <div class="ocs__table-wrap">
     <table class="ocs__table">
       <thead>
@@ -144,6 +150,7 @@ full_width: true
   </div>
 </div>
 
-<script type="module" src="{{ '/assets/js/rotary-events.js' | relative_url }}"></script>
+<script type="module"
+        src="{{ '/assets/js/rotary-events.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 <!-- markdownlint-enable MD033 MD046 -->

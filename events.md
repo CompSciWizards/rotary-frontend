@@ -13,83 +13,50 @@ permalink: /events
     Add or remove the events that appear in the “Upcoming Events” table on the homepage.
   </p>
 
-  <style>
-    #add-event-section[hidden],
-    #events-access-note[hidden],
-    #event-form-errors[hidden],
-    #event-actions-header[hidden] {
-      display: none;
-    }
-
-    .page-content .rotary-events__errors {
-      margin: 0 0 1rem;
-      padding-left: 1.25rem;
-      color: var(--red);
-      line-height: 1.5;
-    }
-
-    .page-content .rotary-events__errors li + li {
-      margin-top: 0.25rem;
-    }
-
-    #add-event-form .ocs__field + .ocs__field {
-      margin-top: 1rem;
-    }
-
-    #add-event-form .ocs__links {
-      margin-top: 1rem;
-    }
-
-    #event-form-message {
-      margin-bottom: 1rem;
-    }
-
-    #events-status {
-      margin-top: 1rem;
-    }
-  </style>
-
-  <p id="events-access-note" class="ocs__text" role="status" aria-live="polite" hidden>
-    Sign in as an administrator to add or remove events.
+  <p id="events-access-note" class="ocs__callout" role="status" aria-live="polite" hidden>
+    <span id="events-access-message">Sign in as an administrator to add or remove events.</span>
+    <a id="events-access-login" href="{{ '/login' | relative_url }}">Sign in</a>
   </p>
 
   <section id="add-event-section" class="ocs__card" aria-labelledby="add-event-heading" hidden>
     <h2 class="ocs__section-title" id="add-event-heading">Add an event</h2>
     <form id="add-event-form" novalidate>
-      <div class="ocs__field">
-        <label class="ocs__label" for="event-date">Date</label>
-        <input class="ocs__input" type="date" id="event-date" name="date" required>
-      </div>
+      <div class="ocs__stack">
+        <div class="ocs__field">
+          <label class="ocs__label" for="event-date">Date</label>
+          <input class="ocs__input" type="date" id="event-date" name="date" required>
+        </div>
 
-      <div class="ocs__field">
-        <label class="ocs__label" for="event-program">Program</label>
-        <input
-          class="ocs__input"
-          type="text"
-          id="event-program"
-          name="program"
-          maxlength="255"
-          required
-        >
-      </div>
+        <div class="ocs__field">
+          <label class="ocs__label" for="event-program">Program</label>
+          <input
+            class="ocs__input"
+            type="text"
+            id="event-program"
+            name="program"
+            maxlength="255"
+            required
+          >
+        </div>
 
-      <div class="ocs__field">
-        <label class="ocs__label" for="event-speaker">Speaker</label>
-        <input
-          class="ocs__input"
-          type="text"
-          id="event-speaker"
-          name="speaker"
-          maxlength="255"
-          required
-        >
-      </div>
+        <div class="ocs__field">
+          <label class="ocs__label" for="event-speaker">Speaker</label>
+          <input
+            class="ocs__input"
+            type="text"
+            id="event-speaker"
+            name="speaker"
+            maxlength="255"
+            required
+          >
+        </div>
 
-      <p id="event-form-message" class="ocs__text" role="status" aria-live="polite"></p>
-      <ul id="event-form-errors" class="rotary-events__errors" role="alert" hidden></ul>
+        <p id="event-form-message" class="ocs__text" role="status" aria-live="polite"></p>
+        <ul id="event-form-errors" class="ocs__callout" role="alert" hidden></ul>
 
-      <div class="ocs__links">
-        <button class="ocs__btn accent fill" type="submit" id="add-event-button">Add event</button>
+        <div class="ocs__links">
+          <button class="ocs__btn accent fill" type="submit" id="add-event-button">Add event</button>
+        </div>
       </div>
     </form>
   </section>
@@ -117,6 +84,7 @@ permalink: /events
   </section>
 </div>
 
-<script type="module" src="{{ '/assets/js/rotary-events.js' | relative_url }}"></script>
+<script type="module"
+        src="{{ '/assets/js/rotary-events.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 <!-- markdownlint-enable MD033 MD046 -->
