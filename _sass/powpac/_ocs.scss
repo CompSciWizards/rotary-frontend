@@ -1,0 +1,39 @@
+// OCS design-system layer for PowPAC pages.
+//
+// These imports pull in the shared Open Coding Society elements exactly as
+// they are used elsewhere on the site. PowPAC only maps the OCS theme tokens
+// to its own palette and typography; the OCS partials are not modified.
+
+@import "open-coding/theme/legacy/root-color-map";
+@import "open-coding/mixins/variables";
+@import "open-coding/mixins/forms";
+@import "open-coding/mixins/grid";
+
+@import "open-coding/elements/containers/main";
+@import "open-coding/elements/buttons/includes";
+@import "open-coding/elements/grids/main";
+@import "open-coding/elements/tables/main";
+@import "open-coding/elements/capstone/main";
+@import "open-coding/elements/capstone/status-pills";
+
+// PowPAC values for the OCS theme tokens.
+:root {
+  --theme: default;
+  --pref-bg-color: var(--paper);
+  --pref-text-color: var(--ink);
+  --pref-accent-color: var(--maroon);
+  --pref-font-family: var(--font-body);
+  --pref-font-size: 14px;
+  --pref-success-color: #2e7d4f;
+  --text-muted: var(--muted);
+
+  --panel: var(--paper);
+  --panel-mid: var(--soft);
+  --ui-bg: var(--soft-warm);
+  --ui-border: var(--line);
+
+  // Alert tones need to stay legible on PowPAC's white panels.
+  --red: #b42318;
+  --warn: #a67c00;
+  --green: #2e7d4f;
+}

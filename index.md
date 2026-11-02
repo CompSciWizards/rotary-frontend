@@ -10,7 +10,7 @@ full_width: true
 
 <div class="ocs__container">
   <span class="ocs__badge">Service Above Self</span>
-  <h1 class="ocs__section-title">Welcome to Poway-Scripps Rotary</h1>
+  <h1>Welcome to Poway-Scripps Rotary</h1>
   <p class="ocs__description">
     Neighbors, friends, and community leaders coming together for local service and fellowship in Poway and Scripps Ranch.
   </p>
@@ -29,7 +29,7 @@ full_width: true
     </div>
   </div>
 
-  <h2 class="ocs__section-title">Upcoming Events</h2>
+  <h2>Upcoming Events</h2>
   <p class="ocs__description">Weekly programs and service projects. Content reference: powayscrippsrotary.org.</p>
 
   <div class="ocs__card">
@@ -47,7 +47,7 @@ full_width: true
     </div>
   </div>
 
-  <h2 class="ocs__section-title">Homepage Stories</h2>
+  <h2>Homepage Stories</h2>
   <p class="ocs__description">A brief look at recent club highlights.</p>
 
   <div class="ocs__grid ocs__grid--card">

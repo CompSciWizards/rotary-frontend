@@ -24,7 +24,7 @@ title: "How Our Systems Work: Login"
 
 <div class="ocs__badge">Open Coding Society</div>
 
-<h1 class="ocs__section-title">{{ page.title }}</h1>
+<h1>{{ page.title }}</h1>
 
 <p class="ocs__description">{{ page.description }}</p>
 
@@ -133,6 +133,7 @@ The `token_version` comparison is the important part. If an admin resets your pa
 | Login succeeds, then `/api/id` returns 401 | The browser did not store or send the cookie. Check `credentials: 'include'`, the origin, and HTTPS. |
 | 403 Forbidden | You are logged in, but your role is not allowed to use that URL. |
 | Logged out after a password reset | Expected. The password change bumped `token_version`, so old cookies are invalid. |
+{: .ocs__table}
 
 ## Where to look
 
