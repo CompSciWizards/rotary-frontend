@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.powpac.org">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Raleway:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Raleway:wght@400;500;600&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
   <!--
     PowPAC shared page layout
@@ -20,9 +20,9 @@
     the shared header, navigation, footer, design tokens, and reusable
     content patterns for PowPAC pages.
 
-    Page content is inserted where `{{ content }}` appears inside
-    <main id="main-content">. Pages can use the reusable blocks below,
-    or the Open Coding `ocs__` content classes.
+    Page content is inserted at the content placeholder inside the
+    main landmark. Pages can use the reusable blocks below, or the
+    Open Coding `ocs__` content classes.
 
     Reusable blocks:
       .page-hero, .intro-grid, .fact-grid, .content-layout,
@@ -48,7 +48,7 @@
       --soft: #f7f5f1;
       --soft-warm: #f1ece3;
       --footer: #4a4a4a;
-      --font-body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+      --font-body: "Tinos", "Times New Roman", Times, serif;
       --font-nav: "Raleway", "Helvetica Neue", Arial, sans-serif;
       --font-display: "Cinzel", Georgia, "Times New Roman", serif;
       --container: 1340px;
@@ -78,7 +78,7 @@
       color: var(--ink);
       font-family: var(--font-body);
       font-size: 18px;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.7;
       letter-spacing: -0.005em;
       -webkit-font-smoothing: antialiased;
