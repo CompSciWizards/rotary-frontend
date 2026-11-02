@@ -28,7 +28,7 @@ permalink: /events
         </div>
 
         <div class="ocs__field">
-          <label class="ocs__label" for="event-program">Program</label>
+          <label class="ocs__label" for="event-program">Show</label>
           <input
             class="ocs__input"
             type="text"
@@ -40,7 +40,7 @@ permalink: /events
         </div>
 
         <div class="ocs__field">
-          <label class="ocs__label" for="event-speaker">Speaker</label>
+          <label class="ocs__label" for="event-speaker">Presented By</label>
           <input
             class="ocs__input"
             type="text"
@@ -69,8 +69,8 @@ permalink: /events
         <thead>
           <tr>
             <th scope="col">Date</th>
-            <th scope="col">Program</th>
-            <th scope="col">Speaker</th>
+            <th scope="col">Show</th>
+            <th scope="col">Presented By</th>
             <th scope="col" id="event-actions-header" hidden>Actions</th>
           </tr>
         </thead>

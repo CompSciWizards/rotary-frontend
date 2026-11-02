@@ -73,8 +73,8 @@ full_width: true
       <thead>
         <tr>
           <th scope="col">Date</th>
-          <th scope="col">Program</th>
-          <th scope="col">Speaker</th>
+          <th scope="col">Show</th>
+          <th scope="col">Presented By</th>
         </tr>
       </thead>
       <tbody id="upcoming-events-body">

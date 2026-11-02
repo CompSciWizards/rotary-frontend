@@ -322,14 +322,14 @@ function validateEvent({ date, program, speaker }) {
         errors.push('date is required and must be YYYY-MM-DD');
     }
     if (!program) {
-        errors.push('program is required');
+        errors.push('show is required');
     } else if (program.length > 255) {
-        errors.push('program must be 255 characters or fewer');
+        errors.push('show must be 255 characters or fewer');
     }
     if (!speaker) {
-        errors.push('speaker is required');
+        errors.push('presented by is required');
     } else if (speaker.length > 255) {
-        errors.push('speaker must be 255 characters or fewer');
+        errors.push('presented by must be 255 characters or fewer');
     }
 
     return errors;
