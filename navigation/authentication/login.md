@@ -11,7 +11,7 @@ description: Log in to your account or create a new one.
   <span class="ocs__badge">Member Access</span>
   <h1>Login or Sign Up</h1>
   <p class="ocs__description">
-    Log in with your GitHub ID, or create an account to get started.
+    Log in with your Username, or create an account to get started.
   </p>
 
   <div class="ocs__split">
@@ -19,8 +19,8 @@ description: Log in to your account or create a new one.
       <h2 class="ocs__section-title" id="login-heading">User Login</h2>
       <form id="pythonForm" onsubmit="loginBoth(); return false;">
         <div class="ocs__field">
-          <label class="ocs__label" for="uid">GitHub ID</label>
-          <input class="ocs__input" type="text" id="uid" name="uid" placeholder="GitHub ID" autocomplete="username" required>
+          <label class="ocs__label" for="uid">Username</label>
+          <input class="ocs__input" type="text" id="uid" name="uid" placeholder="Username" autocomplete="username" required>
         </div>
         <div class="ocs__field">
           <label class="ocs__label" for="password">Password</label>
@@ -41,12 +41,12 @@ description: Log in to your account or create a new one.
           <input class="ocs__input" type="text" id="name" name="name" placeholder="Name" autocomplete="name" required>
         </div>
         <div class="ocs__field">
-          <label class="ocs__label" for="signupUid">GitHub ID</label>
-          <input class="ocs__input" type="text" id="signupUid" name="uid" placeholder="GitHub ID" autocomplete="username" required>
+          <label class="ocs__label" for="signupUid">Username</label>
+          <input class="ocs__input" type="text" id="signupUid" name="uid" placeholder="Username" autocomplete="username" required>
         </div>
         <div class="ocs__field">
-          <label class="ocs__label" for="signupSid">Student ID</label>
-          <input class="ocs__input" type="text" id="signupSid" name="sid" placeholder="Student ID" required>
+          <label class="ocs__label" for="signupSid">PowPac ID</label>
+          <input class="ocs__input" type="text" id="signupSid" name="sid" placeholder="PowPac ID" required>
         </div>
         <div class="ocs__field">
           <label class="ocs__label" for="signupEmail">Email</label>
@@ -60,7 +60,7 @@ description: Log in to your account or create a new one.
           <label class="ocs__toggle">
             <input class="ocs__toggle-input" type="checkbox" name="kasmNeeded" id="kasmNeeded">
             <span class="ocs__toggle-track" aria-hidden="true"></span>
-            <span class="ocs__toggle-label">Kasm Server Needed</span>
+            <span class="ocs__toggle-label">I'm a Volunteer</span>
           </label>
         </p>
         <p id="signupMessage" class="ocs__text" role="status" aria-live="polite" style="color: var(--green);"></p>
