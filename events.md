@@ -8,7 +8,7 @@ permalink: /events
 
 <div class="ocs__container">
   <span class="ocs__badge">Administration</span>
-  <h1>Upcoming Events</h1>
+  <h2>Upcoming Events</h2>
   <p class="ocs__description">
     Add or remove the events that appear in the “Upcoming Events” table on the homepage.
   </p>

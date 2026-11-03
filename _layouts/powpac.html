@@ -11,52 +11,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
+  <!-- Shared site styles: the same header used by the opencs layouts. -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
   <!-- OCS element grammar only; no PowPAC component CSS. -->
   <link rel="stylesheet" href="{{ '/assets/css/powpac-ocs.css' | relative_url }}">
 </head>
 
-<body>
-  <header>
-    <div class="ocs__container">
-      <a class="ocs__btn small" href="#main-content">Skip to main content</a>
-
-      <div class="ocs__card">
-        <div class="ocs__card-header">
-          <a href="{{ '/' | relative_url }}" aria-label="PowPAC home">
-            <img
-              class="ocs__image-frame ocs__image-frame--thumbnail"
-              src="https://www.powpac.org/wp-content/uploads/2026/08/header_logo_whitebg-286x300.png"
-              width="286"
-              height="300"
-              alt="PowPAC — Poway Performing Arts Company"
-            >
-          </a>
-          <a class="ocs__btn accent fill" href="https://app.arts-people.com/index.php?ticketing=powpa" target="_blank" rel="noopener">
-            Buy Tickets
-          </a>
-        </div>
-
-        <nav aria-label="Primary navigation">
-          <div class="ocs__links ocs__links--wide">
-            <a class="ocs__btn small" href="{{ '/' | relative_url }}">Home</a>
-            <a class="ocs__btn small" href="{{ '/whats-playing/' | relative_url }}">What’s Playing</a>
-            <a class="ocs__btn small" href="{{ '/ticket-info/' | relative_url }}">Ticket Info</a>
-            <a class="ocs__btn small" href="{{ '/auditions/' | relative_url }}">Auditions</a>
-            <a class="ocs__btn small" href="{{ '/plan-your-visit/' | relative_url }}">Plan Your Visit</a>
-            <a class="ocs__btn small" href="{{ '/about-us/' | relative_url }}">About Us</a>
-            <a class="ocs__btn small" href="{{ '/support-us/' | relative_url }}">Support Us</a>
-            <a class="ocs__btn small" href="{{ '/events' | relative_url }}">Events</a>
-            <a class="ocs__btn small" href="{{ '/login' | relative_url }}">Login</a>
-          </div>
-        </nav>
-
-        <p class="ocs__text">
-          Box office: <a href="tel:+18586798085">858.679.8085</a> ·
-          13250 Poway Rd., Poway, CA 92064
-        </p>
-      </div>
-    </div>
-  </header>
+<body class="user-theme-active">
+  {%- include themes/minima/header.html -%}
 
   <main id="main-content">
     {{ content }}

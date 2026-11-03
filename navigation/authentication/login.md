@@ -9,7 +9,7 @@ description: Log in to your account or create a new one.
 
 <div class="ocs__container">
   <span class="ocs__badge">Member Access</span>
-  <h1>Login or Sign Up</h1>
+  <h2>Login or Sign Up</h2>
   <p class="ocs__description">
     Log in with your Username, or create an account to get started.
   </p>

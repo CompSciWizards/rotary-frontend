@@ -10,7 +10,7 @@ full_width: true
 
 <div class="ocs__container">
   <span class="ocs__badge">Now Playing</span>
-  <h1>The Wisdom of Eve</h1>
+  <h2>The Wisdom of Eve</h2>
   <p class="ocs__description">
     November 13 – December 13, 2026 · PowPAC, Poway
   </p>
